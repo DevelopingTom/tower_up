@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmcsosyusjm8d"]
+
+[ext_resource type="Script" path="res://building/anchor/anchor.gd" id="1_1kc40"]
+[ext_resource type="Texture2D" uid="uid://umpuibnb7qg3" path="res://building/anchor/anchor.png" id="1_66a77"]
+[ext_resource type="PackedScene" uid="uid://pqvxemxkja8i" path="res://ui/building_list/building_list.tscn" id="2_n1dhu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iv8or"]
+size = Vector2(14, 14)
+
+[node name="Anchor" type="Node2D"]
+script = ExtResource("1_1kc40")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -16)
+texture = ExtResource("1_66a77")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -16)
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_iv8or")
+
+[node name="BuildingList" parent="." instance=ExtResource("2_n1dhu")]
+visible = false
+offset_left = -35.0
+offset_top = -72.0
+offset_right = -35.0
+offset_bottom = -72.0
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

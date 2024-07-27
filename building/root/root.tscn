@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://dftucl2wox2nq"]
+
+[ext_resource type="PackedScene" uid="uid://bjsjul1uaaek4" path="res://building/building.tscn" id="1_xmcun"]
+[ext_resource type="Texture2D" uid="uid://l1405y42ch3k" path="res://building/root/root.png" id="2_82sed"]
+[ext_resource type="PackedScene" uid="uid://dmcsosyusjm8d" path="res://building/anchor/anchor.tscn" id="3_aj7e3"]
+
+[node name="Root" instance=ExtResource("1_xmcun")]
+position = Vector2(-6, -15)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_82sed")
+centered = false
+
+[node name="Anchor" parent="Anchors" index="0" instance=ExtResource("3_aj7e3")]
+
+[node name="Anchor2" parent="Anchors" index="1" instance=ExtResource("3_aj7e3")]
+position = Vector2(16, 0)
+
+[node name="Anchor3" parent="Anchors" index="2" instance=ExtResource("3_aj7e3")]
+position = Vector2(32, 0)
+
+[node name="Anchor4" parent="Anchors" index="3" instance=ExtResource("3_aj7e3")]
+position = Vector2(48, 0)
+
+[node name="Anchor5" parent="Anchors" index="4" instance=ExtResource("3_aj7e3")]
+position = Vector2(64, 0)
+
+[node name="Anchor6" parent="Anchors" index="5" instance=ExtResource("3_aj7e3")]
+position = Vector2(80, 0)
+
+[node name="Anchor7" parent="Anchors" index="6" instance=ExtResource("3_aj7e3")]
+position = Vector2(96, 0)
+
+[node name="Anchor8" parent="Anchors" index="7" instance=ExtResource("3_aj7e3")]
+position = Vector2(112, 0)
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+position = Vector2(64, 8)
