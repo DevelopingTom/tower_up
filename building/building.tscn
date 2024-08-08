@@ -18,3 +18,5 @@ script = ExtResource("1_uftj5")
 shape = SubResource("RectangleShape2D_isye7")
 
 [node name="ConnectedBuildings" type="Node2D" parent="."]
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

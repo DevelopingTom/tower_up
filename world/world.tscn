@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4eid4qnyy2fk"]
+[gd_scene load_steps=7 format=3 uid="uid://d4eid4qnyy2fk"]
 
 [ext_resource type="Texture2D" uid="uid://qqutcmuuesfp" path="res://world/ground_set.png" id="1_kxk13"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_srm0t"]
 [ext_resource type="PackedScene" uid="uid://dftucl2wox2nq" path="res://building/root/root.tscn" id="3_ektfq"]
+[ext_resource type="PackedScene" uid="uid://b5fbf37m2axyd" path="res://ui/world_ui/world_ui.tscn" id="4_dn7hj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8ogi"]
 texture = ExtResource("1_kxk13")
@@ -812,3 +813,5 @@ layer_0/tile_data = PackedInt32Array(65535, 262144, 0, 65534, 0, 0, 131071, 1310
 position = Vector2(65, -21)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="WorldUi" parent="." instance=ExtResource("4_dn7hj")]
