@@ -7,9 +7,9 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	pass
 
 
-func on_building_clicked(building: Building):
+func on_building_clicked(_building: Building):
 	pass

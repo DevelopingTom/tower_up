@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_iv8or")
 
 [node name="BuildingList" parent="." instance=ExtResource("2_n1dhu")]
 visible = false
+z_index = 1
 offset_left = -35.0
 offset_top = -72.0
 offset_right = -35.0

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=4 format=3 uid="uid://dn6sgthy7idx1"]
+
+[ext_resource type="PackedScene" uid="uid://c1nyxap44l58t" path="res://building/buildings/block_1x2.tscn" id="1_akbni"]
+[ext_resource type="Texture2D" uid="uid://p0ux3qouhfce" path="res://ui/building_list/items/attack_icon.png" id="2_6vvdm"]
+[ext_resource type="Script" path="res://ui/building_list/items/item.gd" id="3_tiduc"]
+
+[resource]
+script = ExtResource("3_tiduc")
+icon = ExtResource("2_6vvdm")
+building = ExtResource("1_akbni")
+item_name = "block 1x2"

@@ -5,18 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://dmcsosyusjm8d" path="res://building/anchor/anchor.tscn" id="3_blwsu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dko73"]
-size = Vector2(63, 62)
+size = Vector2(60, 61)
 
 [node name="Block4x4" instance=ExtResource("1_7sph1")]
 
 [node name="Sprite2D" parent="." index="0"]
-position = Vector2(0, -64)
 texture = ExtResource("2_d5vv5")
-centered = false
+offset = Vector2(0, -64)
 
 [node name="Anchor" parent="Anchors" index="0" instance=ExtResource("3_blwsu")]
 position = Vector2(0, -64)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
-position = Vector2(31.5, -32)
+position = Vector2(32, -31.5)
 shape = SubResource("RectangleShape2D_dko73")

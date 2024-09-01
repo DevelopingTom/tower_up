@@ -1,0 +1,12 @@
+[gd_resource type="Resource" load_steps=4 format=3 uid="uid://b0npapyn2xynj"]
+
+[ext_resource type="Resource" uid="uid://blonthhn54m1q" path="res://ui/building_list/catalog/block4x4.tres" id="1_is2y1"]
+[ext_resource type="Resource" uid="uid://dn6sgthy7idx1" path="res://ui/building_list/catalog/block1x2.tres" id="2_xnamv"]
+
+[sub_resource type="GDScript" id="GDScript_htn6v"]
+script/source = "@export var catalog: Array[Item]
+"
+
+[resource]
+script = SubResource("GDScript_htn6v")
+catalog = Array[Resource("res://ui/building_list/items/item.gd")]([ExtResource("1_is2y1"), ExtResource("2_xnamv")])

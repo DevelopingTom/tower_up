@@ -1,23 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://c1nyxap44l58t"]
 
 [ext_resource type="PackedScene" uid="uid://bjsjul1uaaek4" path="res://building/building.tscn" id="1_o3he4"]
-[ext_resource type="Texture2D" uid="uid://cy0xndcnekdah" path="res://building/buildings/block_4x4.png" id="2_tvl8c"]
+[ext_resource type="Texture2D" uid="uid://d262xkmdjqshp" path="res://building/buildings/block_1x2.png" id="2_pk8kp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_00f1h"]
-size = Vector2(16, 32)
+size = Vector2(14, 30)
 
 [node name="Block1x2" instance=ExtResource("1_o3he4")]
 
 [node name="Sprite2D" parent="." index="0"]
-visible = false
-texture = ExtResource("2_tvl8c")
+texture = ExtResource("2_pk8kp")
+offset = Vector2(0, -32)
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
 position = Vector2(8, -16)
 shape = SubResource("RectangleShape2D_00f1h")
-
-[node name="Sprite2D2" type="Sprite2D" parent="." index="3"]
-position = Vector2(0, -32)
-scale = Vector2(0.25, 0.5)
-texture = ExtResource("2_tvl8c")
-centered = false

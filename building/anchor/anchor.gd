@@ -15,7 +15,6 @@ func _on_area_2d_input_event(_viewport, event, _shape_idx):
 			$BuildingList.show()
 
 func _on_area_2d_area_entered(_area):
-	print("entered")
 	hide()
 
 func _on_area_2d_area_exited(_area):

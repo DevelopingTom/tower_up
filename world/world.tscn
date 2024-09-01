@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://d4eid4qnyy2fk"]
+[gd_scene load_steps=9 format=3 uid="uid://d4eid4qnyy2fk"]
 
 [ext_resource type="Texture2D" uid="uid://qqutcmuuesfp" path="res://world/ground_set.png" id="1_kxk13"]
 [ext_resource type="Script" path="res://world/world.gd" id="1_srm0t"]
 [ext_resource type="PackedScene" uid="uid://dftucl2wox2nq" path="res://building/root/root.tscn" id="3_ektfq"]
+[ext_resource type="Script" path="res://world/camera.gd" id="4_32oi0"]
 [ext_resource type="PackedScene" uid="uid://b5fbf37m2axyd" path="res://ui/world_ui/world_ui.tscn" id="4_dn7hj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g8ogi"]
@@ -801,17 +802,28 @@ terrain_set_0/terrain_0/name = "ground"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/0 = SubResource("TileSetAtlasSource_g8ogi")
 
+[sub_resource type="Environment" id="Environment_s6gas"]
+background_mode = 3
+glow_enabled = true
+glow_blend_mode = 0
+
 [node name="World" type="Node2D"]
 script = ExtResource("1_srm0t")
 
 [node name="TileMap" type="TileMap" parent="."]
+position = Vector2(33, -45)
 tile_set = SubResource("TileSet_8ncya")
 format = 2
 layer_0/tile_data = PackedInt32Array(65535, 262144, 0, 65534, 0, 0, 131071, 131072, 4, 131070, 0, 4, 0, 65536, 0, 65536, 65536, 4, 65537, 262144, 4, 65538, 131072, 4, 65539, 196608, 4, 65540, 196608, 4, 65541, 196608, 4, 65542, 65536, 4, 65543, 131072, 4, 65544, 131072, 4, 65545, 131072, 4, 65546, 65536, 4, 65547, 196608, 4, 65548, 262144, 4, 65549, 262144, 4, 65550, 196608, 4, 65551, 65536, 4, 65552, 196608, 4, 65553, 196608, 4, 18, 196608, 0, 17, 262144, 0, 16, 262144, 0, 15, 196608, 0, 14, 262144, 0, 13, 196608, 0, 12, 262144, 0, 11, 131072, 0, 10, 65536, 0, 9, 65536, 0, 8, 131072, 0, 7, 262144, 0, 6, 196608, 0, 5, 131072, 0, 4, 65536, 0, 3, 196608, 0, 2, 65536, 0, 1, 131072, 0, 65554, 131072, 4, 19, 327680, 0, 65555, 327680, 4)
 
-[node name="Root" parent="." instance=ExtResource("3_ektfq")]
-position = Vector2(65, -21)
+[node name="Root" parent="." groups=["building"] instance=ExtResource("3_ektfq")]
+position = Vector2(98, -66)
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(162, -73)
+script = ExtResource("4_32oi0")
 
 [node name="WorldUi" parent="." instance=ExtResource("4_dn7hj")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s6gas")

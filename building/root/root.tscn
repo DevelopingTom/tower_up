@@ -9,7 +9,6 @@ position = Vector2(-6, -15)
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_82sed")
-centered = false
 
 [node name="Anchor" parent="Anchors" index="0" instance=ExtResource("3_aj7e3")]
 

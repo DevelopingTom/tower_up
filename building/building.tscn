@@ -1,22 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjsjul1uaaek4"]
+[gd_scene load_steps=4 format=3 uid="uid://bjsjul1uaaek4"]
 
 [ext_resource type="Script" path="res://building/building.gd" id="1_uftj5"]
+[ext_resource type="PackedScene" uid="uid://cllho4nu0o3j6" path="res://building/phantom/phantom.tscn" id="2_wukt4"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_isye7"]
-size = Vector2(128, 16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_67x3w"]
+size = Vector2(126, 14)
 
 [node name="Building" type="Node2D"]
 script = ExtResource("1_uftj5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+centered = false
 
 [node name="Anchors" type="Node2D" parent="."]
 
 [node name="Area2D" type="Area2D" parent="."]
+monitoring = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("RectangleShape2D_isye7")
+shape = SubResource("RectangleShape2D_67x3w")
 
 [node name="ConnectedBuildings" type="Node2D" parent="."]
 
+[node name="Phantom" parent="." instance=ExtResource("2_wukt4")]
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="construction_possible" from="Phantom" to="." method="_on_phantom_construction_possible"]
